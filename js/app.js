@@ -1,5 +1,5 @@
 
-var app = angular.module('angularApp', ['ui.router','ngResource','ui.bootstrap']);
+var app = angular.module('angularApp', ['ui.router','ui.bootstrap']);
 app.run(function($rootScope, $location, $state, LoginService) {
     $rootScope.$on('$stateChangeSuccess', 
       function(event, to, toParams, from, fromParams){ 
