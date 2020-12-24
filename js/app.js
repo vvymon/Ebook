@@ -286,6 +286,19 @@ angular.module('angularApp').filter('cut', function () {
         $state.transitionTo('dathang');
         console.log($rootScope.obj);
         };
+
+        $rootScope.obj=orderBookService;
+        $scope.addToCart2 = function(book){
+          $rootScope.book=book;
+          orderBookService.addBooks(book);   
+          ModalEditor.openModal();
+           console.log($rootScope.obj.totalAmount);
+        };
+        // $scope.addToCart1 = function(book){
+        //   $rootScope.book=book;
+        //   orderBookService.addBooks(book);   
+        //    console.log($rootScope.obj);
+        // };
 }]);
   
 
