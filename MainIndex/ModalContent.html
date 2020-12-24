@@ -1,0 +1,99 @@
+
+<div class="modal-content" style="display: block;" role="dialog">
+				
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" style="border-radius: 0 5px 0 50%; background: #000000; width: 30px; height: 30px; position: relative; z-index: 1111111; color: #fff;">×</button>
+				<div class="modal-body">
+					<div class="cart-popup__row">
+						<div class="cart-popup__cell">
+							<div class="cart-popup-item">
+								<h5 class="cart-popup-item__header ng-binding">
+									<i class="fa fa-check"></i>
+									1 sản phẩm vừa được thêm vào giỏ hàng
+								</h5>
+								<div class="cart-popup-item__product-list">
+									<div class="cart-popup-product cart-popup-product_main cart-popup-product_quantity">
+										<div class="cart-popup-product__link-img">
+											<a class="cart-popup-product__link" ng-href="#/sach/Sách mới/{{sachmoiorder.id}}" ng-click="cancel()">
+												<img class="cart-popup-product__img" alt="{{sachmoiorder.TenSach}}" ng-src="{{sachmoiorder.ImageSach}}">
+											</a>
+										</div>
+										<div class="cart-popup-product__info">
+											<h2 class="cart-popup-product__title ng-binding">{{sachmoiorder.TenSach}}</h2>
+											<div class="au-view">
+												<span>Tác giả: </span>{{sachmoiorder.TacGia}}
+											</div>
+											<div class="publisher-view">
+												{{sachmoiorder.NhaPhatHanh}}
+											</div>
+											
+											<div class="cart-popup-product__paid-price ng-binding">{{sachmoiorder.Gia}}</div>
+											<!-- <div class="cart-popup-product__discount-block" ng-show="productCartItem.DiscountPercent>0">
+												<div class="cart-popup-product__original-unit-price ng-binding">160,000₫</div>
+												<div class="cart-popup-product__discount ng-binding">Giảm giá 15%</div>
+											</div> -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cart-popup__cell_summary">
+							<div class="cart-summary" ng-repeat="c in sachsOrder|filter:{id:sachmoiorder.id}">
+								<h5 class="summary-header">
+									<span class="txt-large txt-black mrs">Giỏ hàng</span>
+									<span class="txt-light-blue txt-normal txt-medium ng-binding">
+										({{c.count}} sản phẩm)
+									</span>
+									<a href="#/cart" style="color:#03A9F4;" ng-click="cancel()">
+										<span class="glyphicon glyphicon-edit"></span> cập nhật
+									</a>
+								</h5>
+
+								<div class="summary-main table mtm">
+									<div class="summary-subtotal row">
+										<span class="col">Tạm tính:</span>
+										<span class="col txt-right ng-binding">{{xulygia()*c.count}}đ</span>
+									</div>
+
+
+
+								</div>
+
+								<div class="summary-total">
+									<div class="row">
+										<span class="col txt-size-small">
+											<span class="txt-bold txt-black">Thành tiền</span>
+										</span>
+										<h3 class="col txt-right txt-large txt-bold txt-black ng-binding">{{xulygia()*c.count}}đ</h3>
+									</div>
+								</div>
+
+								<div class="summary-control table mt15 mbs">
+									<div class="row">
+										<span class="continue-shopping-wrap col">
+											<a class="btn sel-continue-shopping continue-shopping" data-dismiss="modal" ng-click="ok()">
+												<i class="fa fa-long-arrow-left"></i> <span>Tiếp tục mua hàng</span>
+											</a>
+										</span>
+
+										<span class="col">
+											<a href="/thanh-toan.html" class="btn btn-bb btn-do-checkout">Thanh toán<i class="fa fa-long-arrow-right"></i></a>
+										</span>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="note-modal-cart">
+						<ul>
+							
+							
+
+						</ul>
+					</div>
+					<div class="cl"></div>
+				</div>
+
+				
+			</div>

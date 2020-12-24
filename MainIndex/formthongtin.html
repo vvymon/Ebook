@@ -1,0 +1,165 @@
+<div class="step-one container" align="center">
+            <form name="formedituser" novalidate="" class="ng-valid-pattern ng-dirty ng-valid-parse ng-valid ng-valid-required ng-submitted" style="">
+                <div class="clearfix"></div>
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
+
+                    <div class="box-edit-delivery" style="margin-bottom: 15px;">
+                       <p  class="ng-scope" ng-if="statuss=='Đăng nhập'">Bạn đã là thành viên? <a href="#/login">ĐĂNG NHẬP</a> </p> <!-- ng-if="userid==-1" -->
+                    </div>
+                    <div class="box-block box-edit-delivery">
+                        <div class="title row">
+                            <h2 style="color: #f15c22">Địa chỉ giao hàng</h2>
+                        </div>
+                        <div class="box-item validation-box">
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label> Họ tên <span style="color:red;">*</span></label>
+                            </div>
+                            <div class="col-md-8 col-sm-8" ng-class="{'box-invalid':  formedituser.txtEditFullName.$invalid}" style="">
+                                <div ng-show="formedituser.txtEditFullName.$invalid" ng-messages="error.editFullName" aria-live="assertive" aria-hidden="true" class="ng-hide" style="">
+                                    <div class="error-text ng-binding" ng-message="required"></div>
+                                </div>
+                                <p class="input-block">
+                                    <input class="item-input input-text ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" type="text" id="txtEditFullName" name="txtEditFullName" required=""ng-model="editUserAdress.Address.FullName" aria-required="false" aria-invalid="false" style="">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-item validation-box">
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label> Email nhận đơn hàng <span style="color:red;">*</span></label>
+                            </div>
+                            <div class="col-md-8 col-sm-8" ng-class="{'box-invalid':  formedituser.txtOrderEmail.$invalid}" style="">
+                                <div ng-show="formedituser.txtOrderEmail.$invalid" ng-messages="error.OrderEmail" aria-live="assertive" aria-hidden="true" class="ng-hide" style="">
+                                    <div class="error-text ng-binding" ng-message="required"></div>
+                                </div>
+                                <p class="input-block">
+                                    <input class="item-input input-text ng-valid-pattern ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" type="text" required="" id="txtOrderEmail" name="txtOrderEmail" ng-pattern="/^(([^<>()[\]\\.,;:\s@\&quot;]+(\.[^<>()[\]\\.,;:\s@\&quot;]+)*)|(\&quot;.+\&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/" ng-model="editUserAdress.OrderEmail" aria-required="false" aria-invalid="false" style="">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="box-item  validation-box">
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label> Quốc gia <span style="color:red;">*</span></label>
+                            </div>
+                            <div class="col-md-8 col-sm-8" >
+                                <div  aria-live="assertive" aria-hidden="true" class="ng-hide">
+                                    <div class="error-text ng-binding" ng-message="required"></div>
+                                </div>
+                                <p class="select-block">
+                                    <select class="item-input input-text ng-pristine ng-valid ng-not-empty ng-touched" id="dropEditCountry" name="dropEditCountry" aria-invalid="false" style=""><option label="Việt Nam" value="1" selected="selected">Việt Nam</option><option label="Afghanistan" value="2">Afghanistan</option><option label="Albania" value="3">Albania</option><option label="Algeria" value="4">Algeria</option><option label="American Samoa" value="5">American Samoa</option><option label="Andorra" value="6">Andorra</option><option label="Angola" value="7">Angola</option><option label="Anguilla" value="8">Anguilla</option><option label="Antarctica" value="9">Antarctica</option><option label="Antigua and Barbuda" value="10">Antigua and Barbuda</option><option label="Argentina" value="11">Argentina</option><option label="Armenia" value="12">Armenia</option><option label="Aruba" value="13">Aruba</option><option label="Australia" value="14">Australia</option><option label="Austria" value="15">Austria</option><option label="Azerbaijan" value="16">Azerbaijan</option><option label="Bahamas" value="17">Bahamas</option><option label="Bahrain" value="18">Bahrain</option><option label="Bangladesh" value="19">Bangladesh</option><option label="Barbados" value="20">Barbados</option><option label="Belarus" value="21">Belarus</option><option label="Belgium" value="22">Belgium</option><option label="Belize" value="23">Belize</option><option label="Benin" value="24">Benin</option><option label="Bermuda" value="25">Bermuda</option><option label="Bhutan" value="26">Bhutan</option><option label="Bolivia" value="27">Bolivia</option><option label="Bosnia and Herzegovina" value="28">Bosnia and Herzegovina</option><option label="Botswana" value="29">Botswana</option><option label="Bouvet Island" value="30">Bouvet Island</option><option label="Brazil" value="31">Brazil</option><option label="British Indian Ocean Territory" value="32">British Indian Ocean Territory</option><option label="Brunei Darussalam" value="33">Brunei Darussalam</option><option label="Bulgaria" value="34">Bulgaria</option><option label="Burkina Faso" value="35">Burkina Faso</option><option label="Burundi" value="36">Burundi</option><option label="Cambodia" value="37">Cambodia</option><option label="Cameroon" value="38">Cameroon</option><option label="Canada" value="39">Canada</option><option label="Cape Verde" value="40">Cape Verde</option><option label="Cayman Islands" value="41">Cayman Islands</option><option label="Central African Republic" value="42">Central African Republic</option><option label="Chad" value="43">Chad</option><option label="Chile" value="44">Chile</option><option label="China" value="45">China</option><option label="Christmas Island" value="46">Christmas Island</option><option label="Cocos (Keeling) Islands" value="47">Cocos (Keeling) Islands</option><option label="Colombia" value="48">Colombia</option><option label="Comoros" value="49">Comoros</option><option label="Congo" value="50">Congo</option><option label="Congo, the Democratic Republic of the" value="51">Congo, the Democratic Republic of the</option><option label="Cook Islands" value="52">Cook Islands</option><option label="Costa Rica" value="53">Costa Rica</option><option label="Cote D'Ivoire" value="54">Cote D'Ivoire</option><option label="Croatia" value="55">Croatia</option><option label="Cuba" value="56">Cuba</option><option label="Cyprus" value="57">Cyprus</option><option label="Czech Republic" value="58">Czech Republic</option><option label="Denmark" value="59">Denmark</option><option label="Djibouti" value="60">Djibouti</option><option label="Dominica" value="61">Dominica</option><option label="Dominican Republic" value="62">Dominican Republic</option><option label="Ecuador" value="63">Ecuador</option><option label="Egypt" value="64">Egypt</option><option label="El Salvador" value="65">El Salvador</option><option label="Equatorial Guinea" value="66">Equatorial Guinea</option><option label="Eritrea" value="67">Eritrea</option><option label="Estonia" value="68">Estonia</option><option label="Ethiopia" value="69">Ethiopia</option><option label="Falkland Islands (Malvinas)" value="70">Falkland Islands (Malvinas)</option><option label="Faroe Islands" value="71">Faroe Islands</option><option label="Fiji" value="72">Fiji</option><option label="Finland" value="73">Finland</option><option label="France" value="74">France</option><option label="French Guiana" value="75">French Guiana</option><option label="French Polynesia" value="76">French Polynesia</option><option label="French Southern Territories" value="77">French Southern Territories</option><option label="Gabon" value="78">Gabon</option><option label="Gambia" value="79">Gambia</option><option label="Georgia" value="80">Georgia</option><option label="Germany" value="81">Germany</option><option label="Ghana" value="82">Ghana</option><option label="Gibraltar" value="83">Gibraltar</option><option label="Greece" value="84">Greece</option><option label="Greenland" value="85">Greenland</option><option label="Grenada" value="86">Grenada</option><option label="Guadeloupe" value="87">Guadeloupe</option><option label="Guam" value="88">Guam</option><option label="Guatemala" value="89">Guatemala</option><option label="Guinea" value="90">Guinea</option><option label="Guinea-Bissau" value="91">Guinea-Bissau</option><option label="Guyana" value="92">Guyana</option><option label="Haiti" value="93">Haiti</option><option label="Heard Island and Mcdonald Islands" value="94">Heard Island and Mcdonald Islands</option><option label="Holy See (Vatican City State)" value="95">Holy See (Vatican City State)</option><option label="Honduras" value="96">Honduras</option><option label="Hong Kong" value="97">Hong Kong</option><option label="Hungary" value="98">Hungary</option><option label="Iceland" value="99">Iceland</option><option label="India" value="100">India</option><option label="Indonesia" value="101">Indonesia</option><option label="Iran, Islamic Republic of" value="102">Iran, Islamic Republic of</option><option label="Iraq" value="103">Iraq</option><option label="Ireland" value="104">Ireland</option><option label="Israel" value="105">Israel</option><option label="Italy" value="106">Italy</option><option label="Jamaica" value="107">Jamaica</option><option label="Japan" value="108">Japan</option><option label="Jordan" value="109">Jordan</option><option label="Kazakhstan" value="110">Kazakhstan</option><option label="Kenya" value="111">Kenya</option><option label="Kiribati" value="112">Kiribati</option><option label="Korea, Democratic People's Republic of" value="113">Korea, Democratic People's Republic of</option><option label="Korea, Republic of" value="114">Korea, Republic of</option><option label="Kuwait" value="115">Kuwait</option><option label="Kyrgyzstan" value="116">Kyrgyzstan</option><option label="Lao People's Democratic Republic" value="117">Lao People's Democratic Republic</option><option label="Latvia" value="118">Latvia</option><option label="Lebanon" value="119">Lebanon</option><option label="Lesotho" value="120">Lesotho</option><option label="Liberia" value="121">Liberia</option><option label="Libyan Arab Jamahiriya" value="122">Libyan Arab Jamahiriya</option><option label="Liechtenstein" value="123">Liechtenstein</option><option label="Lithuania" value="124">Lithuania</option><option label="Luxembourg" value="125">Luxembourg</option><option label="Macao" value="126">Macao</option><option label="Macedonia, the Former Yugoslav Republic of" value="127">Macedonia, the Former Yugoslav Republic of</option><option label="Madagascar" value="128">Madagascar</option><option label="Malawi" value="129">Malawi</option><option label="Malaysia" value="130">Malaysia</option><option label="Maldives" value="131">Maldives</option><option label="Mali" value="132">Mali</option><option label="Malta" value="133">Malta</option><option label="Marshall Islands" value="134">Marshall Islands</option><option label="Martinique" value="135">Martinique</option><option label="Mauritania" value="136">Mauritania</option><option label="Mauritius" value="137">Mauritius</option><option label="Mayotte" value="138">Mayotte</option><option label="Mexico" value="139">Mexico</option><option label="Micronesia, Federated States of" value="140">Micronesia, Federated States of</option><option label="Moldova, Republic of" value="141">Moldova, Republic of</option><option label="Monaco" value="142">Monaco</option><option label="Mongolia" value="143">Mongolia</option><option label="Montserrat" value="144">Montserrat</option><option label="Morocco" value="145">Morocco</option><option label="Mozambique" value="146">Mozambique</option><option label="Myanmar" value="147">Myanmar</option><option label="Namibia" value="148">Namibia</option><option label="Nauru" value="149">Nauru</option><option label="Nepal" value="150">Nepal</option><option label="Netherlands" value="151">Netherlands</option><option label="Netherlands Antilles" value="152">Netherlands Antilles</option><option label="New Caledonia" value="153">New Caledonia</option><option label="New Zealand" value="154">New Zealand</option><option label="Nicaragua" value="155">Nicaragua</option><option label="Niger" value="156">Niger</option><option label="Nigeria" value="157">Nigeria</option><option label="Niue" value="158">Niue</option><option label="Norfolk Island" value="159">Norfolk Island</option><option label="Northern Mariana Islands" value="160">Northern Mariana Islands</option><option label="Norway" value="161">Norway</option><option label="Oman" value="162">Oman</option><option label="Pakistan" value="163">Pakistan</option><option label="Palau" value="164">Palau</option><option label="Palestinian Territory, Occupied" value="165">Palestinian Territory, Occupied</option><option label="Panama" value="166">Panama</option><option label="Papua New Guinea" value="167">Papua New Guinea</option><option label="Paraguay" value="168">Paraguay</option><option label="Peru" value="169">Peru</option><option label="Philippines" value="170">Philippines</option><option label="Pitcairn" value="171">Pitcairn</option><option label="Poland" value="172">Poland</option><option label="Portugal" value="173">Portugal</option><option label="Puerto Rico" value="174">Puerto Rico</option><option label="Qatar" value="175">Qatar</option><option label="Reunion" value="176">Reunion</option><option label="Romania" value="177">Romania</option><option label="Russian Federation" value="178">Russian Federation</option><option label="Rwanda" value="179">Rwanda</option><option label="Saint Helena" value="180">Saint Helena</option><option label="Saint Kitts and Nevis" value="181">Saint Kitts and Nevis</option><option label="Saint Lucia" value="182">Saint Lucia</option><option label="Saint Pierre and Miquelon" value="183">Saint Pierre and Miquelon</option><option label="Saint Vincent and the Grenadines" value="184">Saint Vincent and the Grenadines</option><option label="Samoa" value="185">Samoa</option><option label="San Marino" value="186">San Marino</option><option label="Sao Tome and Principe" value="187">Sao Tome and Principe</option><option label="Saudi Arabia" value="188">Saudi Arabia</option><option label="Senegal" value="189">Senegal</option><option label="Serbia and Montenegro" value="190">Serbia and Montenegro</option><option label="Seychelles" value="191">Seychelles</option><option label="Sierra Leone" value="192">Sierra Leone</option><option label="Singapore" value="193">Singapore</option><option label="Slovakia" value="194">Slovakia</option><option label="Slovenia" value="195">Slovenia</option><option label="Solomon Islands" value="196">Solomon Islands</option><option label="Somalia" value="197">Somalia</option><option label="South Africa" value="198">South Africa</option><option label="South Georgia and the South Sandwich Islands" value="199">South Georgia and the South Sandwich Islands</option><option label="Spain" value="200">Spain</option><option label="Sri Lanka" value="201">Sri Lanka</option><option label="Sudan" value="202">Sudan</option><option label="Suriname" value="203">Suriname</option><option label="Svalbard and Jan Mayen" value="204">Svalbard and Jan Mayen</option><option label="Swaziland" value="205">Swaziland</option><option label="Sweden" value="206">Sweden</option><option label="Switzerland" value="207">Switzerland</option><option label="Syrian Arab Republic" value="208">Syrian Arab Republic</option><option label="Taiwan" value="209">Taiwan</option><option label="Tajikistan" value="210">Tajikistan</option><option label="Tanzania, United Republic of" value="211">Tanzania, United Republic of</option><option label="Thailand" value="212">Thailand</option><option label="Timor-Leste" value="213">Timor-Leste</option><option label="Togo" value="214">Togo</option><option label="Tokelau" value="215">Tokelau</option><option label="Tonga" value="216">Tonga</option><option label="Trinidad and Tobago" value="217">Trinidad and Tobago</option><option label="Tunisia" value="218">Tunisia</option><option label="Turkey" value="219">Turkey</option><option label="Turkmenistan" value="220">Turkmenistan</option><option label="Turks and Caicos Islands" value="221">Turks and Caicos Islands</option><option label="Tuvalu" value="222">Tuvalu</option><option label="Uganda" value="223">Uganda</option><option label="Ukraine" value="224">Ukraine</option><option label="United Arab Emirates" value="225">United Arab Emirates</option><option label="United Kingdom" value="226">United Kingdom</option><option label="United States" value="227">United States</option><option label="United States Minor Outlying Islands" value="228">United States Minor Outlying Islands</option><option label="Uruguay" value="229">Uruguay</option><option label="Uzbekistan" value="230">Uzbekistan</option><option label="Vanuatu" value="231">Vanuatu</option><option label="Venezuela" value="232">Venezuela</option><option label="Virgin Islands, British" value="233">Virgin Islands, British</option><option label="Virgin Islands, U.s." value="234">Virgin Islands, U.s.</option><option label="Wallis and Futuna" value="235">Wallis and Futuna</option><option label="Western Sahara" value="236">Western Sahara</option><option label="Yemen" value="237">Yemen</option><option label="Zambia" value="238">Zambia</option><option label="Zimbabwe" value="239">Zimbabwe</option></select>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-item  validation-box">
+
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label> Tỉnh / Thành Phố <span style="color:red;">*</span></label>
+                            </div>
+                            <div class="col-md-8 col-sm-8 ">
+                                <div aria-live="assertive" aria-hidden="true" class="ng-hide">
+                                    <div class="error-text ng-binding" ng-message="required"></div>
+                                </div>
+                                <p class="select-block">
+                                    <select class="item-input input-text ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" id="dropEditCity" name="dropEditCity"  aria-invalid="false" style=""><option label="Hồ Chí Minh" value="1" >Hồ Chí Minh</option><option label="Hà Nội" value="2">Hà Nội</option><option label="Hải Phòng" value="3">Hải Phòng</option><option label="Đà Nẵng" value="4">Đà Nẵng</option><option label="Cần Thơ" value="5">Cần Thơ</option><option label="An Giang" value="6" >An Giang</option><option label="Bà Rịa - Vũng Tàu" value="7">Bà Rịa - Vũng Tàu</option><option label="Bắc Giang" value="8">Bắc Giang</option><option label="Bắc Kạn" value="9">Bắc Kạn</option><option label="Bạc Liêu" value="10">Bạc Liêu</option><option label="Bắc Ninh" value="11">Bắc Ninh</option><option label="Bến Tre" value="12">Bến Tre</option><option label="Bình Định" value="13">Bình Định</option><option label="Bình Dương" value="14">Bình Dương</option><option label="Bình Phước" value="15">Bình Phước</option><option label="Bình Thuận" value="16">Bình Thuận</option><option label="Cà mau" value="17">Cà mau</option><option label="Cao Bằng" value="18">Cao Bằng</option><option label="Đắk Lắk" value="19">Đắk Lắk</option><option label="Đắk Nông" value="20">Đắk Nông</option><option label="Điện Biên" value="21">Điện Biên</option><option label="Đồng Nai" value="22">Đồng Nai</option><option label="Đồng Tháp" value="23">Đồng Tháp</option><option label="Gia Lai" value="24">Gia Lai</option><option label="Hà Giang" value="25">Hà Giang</option><option label="Hà Nam" value="26">Hà Nam</option><option label="Hà Tĩnh" value="27">Hà Tĩnh</option><option label="Hải Dương" value="63">Hải Dương</option><option label="Hậu Giang" value="62">Hậu Giang</option><option label="Hòa Bình" value="28">Hòa Bình</option><option label="Hưng Yên" value="29">Hưng Yên</option><option label="Khánh Hòa" value="30">Khánh Hòa</option><option label="Kiên Giang" value="31">Kiên Giang</option><option label="Kon Tum" value="32">Kon Tum</option><option label="Lai Châu" value="33">Lai Châu</option><option label="Lâm Đồng " value="34">Lâm Đồng </option><option label="Lạng Sơn" value="35">Lạng Sơn</option><option label="Lào Cai" value="36">Lào Cai</option><option label="Long An" value="37">Long An</option><option label="Nam Định" value="38">Nam Định</option><option label="Nghệ An" value="39">Nghệ An</option><option label="Ninh Bình" value="40">Ninh Bình</option><option label="Ninh Thuận" value="41">Ninh Thuận</option><option label="Phú Thọ" value="42">Phú Thọ</option><option label="Phú Yên" value="43">Phú Yên</option><option label="Quảng Bình" value="44">Quảng Bình</option><option label="Quảng Nam " value="45">Quảng Nam </option><option label="Quảng Ngãi" value="46">Quảng Ngãi</option><option label="Quảng Ninh" value="47">Quảng Ninh</option><option label="Quảng Trị " value="48">Quảng Trị </option><option label="Sóc Trăng" value="49">Sóc Trăng</option><option label="Sơn La" value="50">Sơn La</option><option label="Tây Ninh" value="51">Tây Ninh</option><option label="Thái Bình" value="52">Thái Bình</option><option label="Thái Nguyên" value="53">Thái Nguyên</option><option label="Thanh Hóa" value="54">Thanh Hóa</option><option label="Thừa Thiên Huế" value="55">Thừa Thiên Huế</option><option label="Tiền Giang" value="56">Tiền Giang</option><option label="Trà Vinh" value="57">Trà Vinh</option><option label="Tuyên Quang" value="58">Tuyên Quang</option><option label="Vĩnh Long" value="59">Vĩnh Long</option><option label="Vĩnh Phúc" value="60">Vĩnh Phúc</option><option label="Yên Bái" value="61">Yên Bái</option></select>
+                                </p>
+                            </div>
+
+
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-item  validation-box">
+
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label>Quận / Huyện <span style="color:red;">*</span></label>
+                            </div>
+                            <div class="col-md-8 col-sm-8" ng-class="{'box-invalid':  formedituser.dropEditWard.$invalid}">
+                                <div ng-show="formedituser.dropEditWard.$invalid" ng-messages="error.editWard" aria-live="assertive" aria-hidden="true" class="ng-hide">
+                                    <div class="error-text ng-binding" ng-message="required"></div>
+                                </div>
+                                <p class="select-block">
+                                   <select class="item-input input-text ng-valid ng-dirty ng-valid-parse ng-touched ng-empty" id="dropEditWard" name="dropEditWard" aria-invalid="false" style=""><option selected="selected"></option><option label="Quận 1" value="1">Quận 1</option><option label="Quận 2" value="2">Quận 2</option><option label="Quận 3" value="3">Quận 3</option><option label="Quận 4" value="4">Quận 4</option><option label="Quận 5" value="5">Quận 5</option><option label="Quận 6" value="6">Quận 6</option><option label="Quận 7" value="7">Quận 7</option><option label="Quận 8" value="8">Quận 8</option><option label="Quận 9" value="9">Quận 9</option><option label="Quận 10" value="10">Quận 10</option><option label="Quận 11" value="11">Quận 11</option><option label="Quận 12" value="12">Quận 12</option><option label="Phú Nhuận" value="13">Phú Nhuận</option><option label="Bình Thạnh" value="14">Bình Thạnh</option><option label="Gò Vấp" value="15">Gò Vấp</option><option label="Tân Bình" value="16">Tân Bình</option><option label="Tân Phú" value="17">Tân Phú</option><option label="Thủ Đức" value="18">Thủ Đức</option><option label="Bình Tân" value="19">Bình Tân</option><option label="Bình Chánh" value="20">Bình Chánh</option><option label="Nhà Bè" value="21">Nhà Bè</option><option label="Cần Giờ" value="22">Cần Giờ</option><option label="Củ Chi" value="23">Củ Chi</option><option label="Hóc Môn" value="24">Hóc Môn</option></select>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-item  validation-box ng-hide" ng-show="recVillages.length > 0" aria-hidden="true">
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label>Phường / Xã <span style="color:red;">*</span></label>
+                            </div>
+                            <div class="col-md-8 col-sm-8" ng-class="{'box-invalid':   formedituser.dropEditSubWard.$invalid}">
+                                <div ng-show="formedituser.dropEditSubWard.$invalid" ng-messages="error.editSubWard" aria-live="assertive" aria-hidden="true" class="ng-hide">
+                                    <div class="error-text ng-binding" ng-message="required"></div>
+                                </div>
+                                <p class="select-block">
+                                    <select class="item-input input-text ng-pristine ng-untouched ng-valid ng-not-empty" id="dropEditSubWard" name="dropEditSubWard" ng-model="editUserAdress.Address.SubWard" ng-options=" option.Name for option in recVillages track by option.ID" aria-invalid="false"><option value="?" selected="selected"></option></select>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-item validation-box">
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label>Số nhà &amp; tên đường <span style="color:red;">*</span></label>
+
+                            </div>
+                            <div class="col-md-8 col-sm-8" ng-class="{'box-invalid':   formedituser.txtEditAddr.$invalid}" style="">
+                                <div ng-show="formedituser.txtEditAddr.$invalid" ng-messages="error.editAddr" aria-live="assertive" aria-hidden="true" class="ng-hide" style="">
+                                    <div class="error-text ng-binding" ng-message="required "></div>
+                                </div>
+                                <p class="textarea-block">
+                                    <textarea class="item-input input-text ng-dirty ng-valid-parse ng-invalid ng-invalid-required ng-not-empty ng-touched" required="" id="txtEditAddr" name="txtEditAddr" rows="2" value="ô 12 lô 555 đăng thai mai" ng-model="editUserAdress.Address.Addr" aria-multiline="true" aria-required="false" aria-invalid="false" style="" spellcheck="false"></textarea>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-item  validation-box">
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label> Di động<span style="color:red;">*</span></label>
+
+                            </div>
+                            <div class="col-md-8 col-sm-8" ng-class="{'box-invalid':  formedituser.txtEditTelephone.$invalid}" style="">
+                                <div ng-show="formedituser.txtEditTelephone.$invalid" ng-messages="error.editTelephone" aria-live="assertive" aria-hidden="true" class="ng-hide" style="">
+                                    <div class="error-text ng-binding" ng-message="required"></div>
+                                </div>
+                                <p class="input-block">
+                                    <input class="item-input input-text ng-valid-pattern ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" type="text" required="" ng-pattern="/^[\s()+-]*([0-9][\s()+-]*){6,14}$/" name="txtEditTelephone" id="txtEditTelephone" ng-model="editUserAdress.Address.Telephone" aria-required="false" aria-invalid="false" style="">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-item  validation-box ng-hide" ng-show="1==2" aria-hidden="true">
+
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                                <label><label> Điện thoại</label></label>
+
+                            </div>
+                            <div class="col-md-8 col-sm-8">
+
+                                <p class="input-block">
+                                    <input class="item-input input-text ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern" type="text" ng-pattern="/^[\s()+-]*([0-9][\s()+-]*){6,14}$/" ng-model="editUserAdress.Address.Cellphone" aria-invalid="false">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="takenote-box">
+                            <div class="col-md-4 col-sm-4 col-xs-12 label-form">
+                            </div>
+                            <div class="checkbox col-md-8 col-sm-8">
+                                <label style="padding-left: 0;"><label style="padding-left: 0;"> Đây là:</label></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="noio" value="nharieng" checked="checked">&nbsp;&nbsp;&nbsp;&nbsp;Nhà riêng &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="noio" value="noilamviec" checked="checked">&nbsp;&nbsp;&nbsp;&nbsp;Nơi làm việc
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <p class="deliver-action" style="text-align: right;padding-right: 15px;">
+                            <button ng-click="gotoPayment()" class="btn btn-bb btn-pad1020">Giao đến địa chỉ này</button>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>

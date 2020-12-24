@@ -1,0 +1,63 @@
+<section id="cart_items">
+		<div class="container">
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="#/home">Home</a></li>
+				  <li class="active">Giỏ hàng</li>
+				</ol>
+			</div>
+			<div class="table-responsive cart_info">
+				<table class="table ">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Sản Phẩm</td>
+							<td class="description">Mô tả</td>
+							<td class="price">Giá</td>
+							<td class="quantity">Số lượng</td>
+							<td class="total">Thành tiền</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="sach in sachsOrder">
+							<td class="cart_product">
+								<a href=""><img ng-src="{{sach.ImageSach}}" alt="{{sach.TenSach}}" style="width: 135px; height: 165px;"></a>
+							</td>
+							<td class="cart_description" style="width: 40%;">
+								<h4><a href="">{{sach.TenSach}}</a></h4>
+								<p>Tác giả: {{sach.TacGia}}</p>
+								<p>Loại Sách: {{sach.Tags}}</p>
+							</td>
+							<td class="cart_price">
+								<p>{{sach.Gia}}</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" ng-click="qty_incr(item)"> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity"ng-init="item=sach" value="{{item.count}}" autocomplete="off" size="2">
+									<a class="cart_quantity_down" ng-click="qty_decr(item)"> - </a>
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">{{sach.totalgiasach}}đ</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" ng-click="XoaSach(sach)"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="checkout container">
+				<div class="top">
+                        <span class="item-number ng-binding">{{obj.totalBooks}} sản phẩm</span>
+                        <span class="total ng-binding">Tổng tiền: {{obj.totalAmount}}đ</span>
+                        <span class="ship-fee">
+                            ( Chưa có cước vận chuyển )
+                        </span><br>
+                        <a class="btn btn-default check_out" href="#/dathang">Tiến hành đặt hàng</a>
+                    </div>
+					
+			</div>
+		</div>
+	</section> <!--/#cart_items-->

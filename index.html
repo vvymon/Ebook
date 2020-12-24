@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularApp" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | E-Book</title>
+    <base href="#/">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.12/angular.js" data-semver="1.4.9"></script>
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script data-require="ui-bootstrap@*" data-semver="0.12.1" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script data-require="angular-resource@*" data-semver="1.2.14" src="http://code.angularjs.org/1.2.14/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+</head><!--/head-->
+
+<body ng-controller="SachController">
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="fa fa-phone"></i> +84 56 340 2305</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> E-Book@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="logo pull-left">
+							<a href="#/home"><img src="images/home/logo.png" alt="" /></a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="search_box pull-right">
+							<form >
+								<input type="text" placeholder="Bạn cần tìm gì?" ng-model="search" list="names" />
+								<datalist  id="names" class="form-control" style="position: absolute; display: none;">
+								    <option ng-repeat="sach in sachtks | filter:{TenSach:search} | limitTo:12" value="{{sach.TenSach}}"></option>
+								  </datalist>
+							</form>
+							
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<!-- <li><a href="#"><i class="fa fa-user"></i>Tài Khoản</a></li>
+								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
+								<li><a href="#/cart"><i class="fa fa-shopping-cart"></i>Giỏ hàng({{obj.totalBooks}})</a></li>
+
+								<li><a href="#/login"><i class="fa fa-lock"></i>{{statuss()}}</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="#/home" class="active">Trang chủ</a></li>
+								<li class="dropdown"><a href="#">Nhà sách E-Book<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="#/sach/Sách mới">Sản phẩm</a></li>
+										<li><a href="#">Thanh Toán</a></li> 
+										<li><a href="#/cart">Giỏ hàng</a></li> 
+										<li><a href="#/login">Đăng Nhập</a></li> 
+                                    </ul>
+                                </li> 
+								
+								<li><a href="#/gioithieu">Giới thiệu</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+				<ui-view>
+					
+				</ui-view>
+	<footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>e</span>-book</h2>
+							<img src="images/home/canhcamlogo.png">
+						</div>
+					</div>
+					<div class="col-sm-7 ">
+					<div class="col-sm-6 canh-cam-letter">
+						<p class="head-text-letter">Đăng ký nhận bản tin từ EBook</p>
+					<p class="sub-text-letter" align="center">Đừng bỏ lỡ những tin nhắn ưu đãi độc quyền dành riêng cho bạn</p>
+					</div>
+					<div class="col-sm-6 inf-sub">
+						<div class="single-widget">
+							<form action="#" class="searchform">
+								<input style="width: 80%;" type="text" placeholder="Nhập địa chỉ Email của bạn" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+							</form>
+						</div>
+					</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="single-widget">
+							<h2>Hỗ trợ khách hàng</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="tel:0563402305">Sản phẩm & Đơn hàng: 056 340 2305</a></li>
+								<li><a href="tel:0563402305">Kỹ thuật & Bảo hành: 056 340 7083</a></li>
+								<li><a href="tel:0582237577">Điện thoại: 058 223 7577</a></li>
+								<li><a href="mailto:EBook@gmail.com">Email: EBook@gmail.com</a></li>
+								<li>Địa chỉ: 148/55A Nguyễn Đình Chiểu, Phường 13, Quận 10, TP.HCM</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="single-widget">
+							<h2>Trợ giúp</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Đăng ký nhận bản tin</a></li>
+								<li><a href="#">Hướng dẫn mua hàng</a></li>
+								<li><a href="#">Phương thức thanh toán</a></li>
+								<li><a href="#">Phương thức vận chuyển</a></li>
+								<li><a href="#">Chính sách đổi-trả</a></li>
+								<li><a href="#">Chính sách bồi hoàn</a></li>
+								<li><a href="#">Câu hỏi thường gặp (FAQs)</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="single-widget">
+							<h2>Tài khoản của bạn</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Cập nhật tài khoản</a></li>
+								<li><a href="#">Giỏ hàng</a></li>
+								<li><a href="#">Lịch sử giao dịch</a></li>
+								<li><a href="#">Sản phẩm yêu thích</a></li>
+								<li><a href="#">Kiểm tra đơn hàng</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About E-Book</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#/gioithieu">Giới thiệu EBook.tv</a></li>
+								<li><a href="#">Liên hệ Ebook</a></li>
+								<li><a href="#">Đặt hàng theo yêu cầu</a></li>
+								<li><a href="#">Bao plastic cho sách</a></li>
+								
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Designed by HaiVy18406 20 E-Book Inc.</p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+						
+	
+  
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
