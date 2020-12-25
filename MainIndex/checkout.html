@@ -1,6 +1,7 @@
-<div class="step-container container step-payment" ng-show="steppayment" aria-hidden="false" style="">
+<div class="step-container container step-payment"  aria-hidden="false" style="">
         <div class="step-two">
-            <form name="form2" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
+            <h2 class="title text-center">THANH TOÁN</h2>
+            <form name="form2" novalidate="" style="">
                 <div class="step-item">
 
                     <div class="left-content">
@@ -15,69 +16,10 @@
                                     Chưa chọn phương thức vận chuyển.
                                 </div>
                                 <div class="ship-detail">
-                                    <div class="office-box" style="display: -webkit-inline-box;">
-                                        <div class="radio office-title ng-hide" ng-show="editUserAdress.Address.City.ID==1 " aria-hidden="true">
-                                            <md-radio-group ng-model="invoice.ShippingTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                                <md-radio-button style="margin-bottom: 0;" class="md-warn" name="rdoShipping" value="0" id="radio_2" role="radio" aria-checked="false" aria-label="Nhận tại văn phòng EBook
-                                                    
-                                                        
-                                                            (
-                                                            
-                                                                147 Pasteur, Phường 6, Quận 3, TP.HCM )"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope">
-                                                    Nhận tại văn phòng EBook
-                                                    </span><span class="office-hint ng-scope ng-hide" ng-show="invoice.ShippingTypeID==0" aria-hidden="true">
-                                                        <span>
-                                                            (<i class="fa fa-home"></i>
-                                                            <small>
-                                                                147 Pasteur, Phường 6, Quận 3, TP.HCM )
-
-                                                            </small>
-
-                                                        </span>
-
-                                                    </span>
-                                                </div></md-radio-button>
-                                            </md-radio-group>
-
-
-                                        </div>
-
-                                        <a style="margin-top :10px;display: block; padding-left: 10px" ng-show="invoice.ShippingTypeID==0" data-toggle="modal" data-target="#address-dialog" href="#address-dialog" aria-hidden="true" class="ng-hide"> <i>Xem bản đồ</i></a>
-                                    </div>
-
-                                    <div class="home-box-outer">
-                                        <div class="radio ship-home-box ng-hide" ng-show="isShipHome" aria-hidden="true">
-
-                                            <md-radio-group ng-model="invoice.ShippingTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                                <md-radio-button class="md-warn" name="rdoShipping" value="6" id="radio_3" role="radio" aria-checked="false" aria-label="Nhân viên giao hàng tận nhà"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope">Nhân viên giao hàng tận nhà </span></div></md-radio-button>
-                                            </md-radio-group>
-
-                                            <div class="aler-ship ng-hide" ng-show="isShipHomeNote &amp;&amp; invoice.ShippingTypeID==6" aria-hidden="true">
-                                                <span aria-hidden="false" class="ng-binding" style="">
-                                                    <i class="fa fa-exclamation-triangle"></i>
-                                                    
-                                                </span>
-                                            </div>
-                                            <div class="freeship ng-hide" ng-show="invoice.ShippingTypeID==6" aria-hidden="true">
-
-                                                <span ng-show="checkWardFreeShip150() &amp;&amp; cartDetail.TotalObj.Total<200000" aria-hidden="true" class="ng-hide">
-                                                    Bạn sẽ được miễn phí vận chuyển cho đơn hàng 200.000đ. Bạn muốn mua gì thêm không?
-                                                    <a href="/">
-                                                        Vâng, để tôi mua thêm
-                                                    </a>
-                                                </span>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="radio" ng-show="!isShipHome &amp;&amp; !isShipExpressOnly &amp;&amp; ( editUserAdress.Address.Country.ID==1)" aria-hidden="false">
-                                        <md-radio-group ng-model="invoice.ShippingTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                            <md-radio-button class="md-warn" id="NomarShipping" name="rdoShipping" value="1" role="radio" aria-checked="false" aria-label="Chuyển thường"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Chuyển thường </span></div></md-radio-button>
-                                        </md-radio-group>
-
+                                   
+                                    <div class="radio"  aria-hidden="false">
+                                        <input type="radio" name="chuyen" value="1" checked="checked" ng-model="invoice.ShippingTypeID">Chuyển thường<br>
+                                        
                                         <div class="aler-ship ng-hide" ng-show="invoice.ShippingTypeID==1" aria-hidden="true">
                                             <span ng-show="checkWardSpecial()" aria-hidden="true" class="ng-hide">
                                                 <i class="fa fa-exclamation-triangle"></i>
@@ -90,26 +32,11 @@
                                                      Thời gian giao hàng dự kiến từ 5 – 7 ngày (không tính Thứ Bảy, Chủ nhật)
                                             </span>
                                         </div>
-                                        <div class="freeship ng-hide" ng-show="invoice.ShippingTypeID==1" aria-hidden="true">
-                                            <span ng-show="checkWardSpecial() &amp;&amp; cartDetail.TotalObj.Total<200000" aria-hidden="true" class="ng-hide">
-                                                Bạn sẽ được miễn phí vận chuyển cho đơn hàng 200.000đ. Bạn muốn mua gì thêm không?
-                                                <a href="/">
-                                                    Vâng, để tôi mua thêm
-                                                </a>
-                                            </span>
-                                            <span ng-show="!checkWardSpecial()&amp;&amp;cartDetail.TotalObj.Total<250000 &amp;&amp; checkWardFreeShip250()" aria-hidden="true" class="ng-hide">
-                                                Bạn sẽ được miễn phí vận chuyển cho đơn hàng 250.000đ. Bạn muốn mua gì thêm không?
-                                                <a href="/">
-                                                    Vâng, để tôi mua thêm
-                                                </a>
-                                            </span>
-                                        </div>
+                                        
                                     </div>
 
-                                    <div class="radio" ng-show="!isShipHome &amp;&amp; !isShipNormalOnly &amp;&amp; ( editUserAdress.Address.Country.ID==1)" aria-hidden="false">
-                                        <md-radio-group ng-model="invoice.ShippingTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                            <md-radio-button class="md-warn" name="rdoShipping" value="2" id="radio_4" role="radio" aria-checked="false" aria-label="Chuyển nhanh"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Chuyển nhanh </span></div></md-radio-button>
-                                        </md-radio-group>
+                                    <div class="radio"  aria-hidden="false">
+                                        <input type="radio" name="chuyen" value="2" checked="checked" ng-model="invoice.ShippingTypeID">Chuyển nhanh<br>
 
                                     </div>
                                     <div class="aler-ship ng-hide" ng-show="invoice.ShippingTypeID==2" aria-hidden="true">
@@ -122,14 +49,6 @@
                                             <i class="fa fa-exclamation-triangle"></i>
                                             Thời gian giao hàng dự kiến 2 – 4 ngày (không tính thứ bảy, Chủ nhật)
                                         </span>
-
-                                    </div>
-
-
-                                    <div class="radio ng-hide" ng-show="(editUserAdress.Address.Country.ID>1)" aria-hidden="true">
-                                        <md-radio-group ng-model="invoice.ShippingTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                            <md-radio-button class="md-warn" name="rdoShipping" value="4" id="radio_5" role="radio" aria-checked="false" aria-label="Đường máy bay"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Đường máy bay </span></div></md-radio-button>
-                                        </md-radio-group>
 
                                     </div>
                                 </div>
@@ -156,139 +75,135 @@
                                 <div class="pay-detail">
 
                                     <div class="radio">
-                                        <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                            <md-radio-button class="md-warn" name="rdoPayment" value="2" id="radio_6" role="radio" aria-checked="false" aria-label="Thẻ ATM đăng ký Internet Banking (miễn phí thanh toán)"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Thẻ ATM đăng ký Internet Banking (miễn phí thanh toán) </span></div></md-radio-button>
-                                        </md-radio-group>
-
-
+                                        <input type="radio" name="thanhtoan" ng-model="invoice.PaymentTypeID" value="2" checked="checked">Thẻ ATM đăng ký Internet Banking (miễn phí thanh toán) <br>
                                     </div>
 
-                                    <div style="left: 0; top: 0; position:relative;" class="alert alert-danger alert-dismissible ng-hide" role="alert" ng-show="(invoice.PaymentTypeID ==2 &amp;&amp; supInfo.BankID==undefined)" aria-hidden="true">
+                                    <div style="left: 0px; top: 0px; position: relative;" class="alert alert-danger alert-dismissible ng-hide" role="alert"  aria-hidden="false" ng-show="(invoice.PaymentTypeID ==2 && supInfo.BankID==undefined)">
                                         Vui lòng chọn ngân hàng thanh toán .
                                     </div>
 
-                                    <div class="bank-payment ng-hide" ng-show="isBankPayment" aria-hidden="true">
+                                    <div class="bank-payment ng-hide" ng-show="(invoice.PaymentTypeID ==2 && supInfo.BankID==undefined)" aria-hidden="false" style="">
                                         <ul id="onepay-bank" class="onepay-bank-list">
                                             <li>
-                                                <img alt="VR Bank" bankid="29" src="/Images/onepay/Bank-Icons-00.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="VR Bank" bankid="29" src="https://bookbuy.vn/Images/onepay/Bank-Icons-00.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Vietcom Bank" bankid="1" src="/Images/onepay/Bank-Icons-01.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Vietcom Bank" bankid="1" src="https://bookbuy.vn/Images/onepay/Bank-Icons-01.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Techcom bank" bankid="2" src="/Images/onepay/Bank-Icons-22.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Techcom bank" bankid="2" src="https://bookbuy.vn/Images/onepay/Bank-Icons-22.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="TienPhong Bank" bankid="3" src="/Images/onepay/Bank-Icons-04.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="TienPhong Bank" bankid="3" src="https://bookbuy.vn/Images/onepay/Bank-Icons-04.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Viettin Bank" bankid="4" src="/Images/onepay/Bank-Icons-16.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Viettin Bank" bankid="4" src="https://bookbuy.vn/Images/onepay/Bank-Icons-16.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="VIB" bankid="5" src="/Images/onepay/Bank-Icons-15.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="VIB" bankid="5" src="https://bookbuy.vn/Images/onepay/Bank-Icons-15.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="DongA Bank" bankid="6" src="/Images/onepay/Bank-Icons-08.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="DongA Bank" bankid="6" src="https://bookbuy.vn/Images/onepay/Bank-Icons-08.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="HD Bank" bankid="7" src="/Images/onepay/Bank-Icons-07.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="HD Bank" bankid="7" src="https://bookbuy.vn/Images/onepay/Bank-Icons-07.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="MB" bankid="8" src="/Images/onepay/Bank-Icons-11.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="MB" bankid="8" src="https://bookbuy.vn/Images/onepay/Bank-Icons-11.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="VietA Bank" bankid="9" src="/Images/onepay/Bank-Icons-20.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="VietA Bank" bankid="9" src="https://bookbuy.vn/Images/onepay/Bank-Icons-20.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Maritime Bank" bankid="10" src="/Images/onepay/Bank-Icons-02.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Maritime Bank" bankid="10" src="https://bookbuy.vn/Images/onepay/Bank-Icons-02.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Eximbank" bankid="11" src="/Images/onepay/Bank-Icons-05.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Eximbank" bankid="11" src="https://bookbuy.vn/Images/onepay/Bank-Icons-05.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="SHB" bankid="12" src="/Images/onepay/Bank-Icons-03.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="SHB" bankid="12" src="https://bookbuy.vn/Images/onepay/Bank-Icons-03.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="VP Bank" bankid="14" src="/Images/onepay/Bank-Icons-14.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="VP Bank" bankid="14" src="https://bookbuy.vn/Images/onepay/Bank-Icons-14.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="AnBinh Bank" bankid="15" src="/Images/onepay/Bank-Icons-13.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="AnBinh Bank" bankid="15" src="https://bookbuy.vn/Images/onepay/Bank-Icons-13.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="SacomBank" bankid="16" src="/Images/onepay/Bank-Icons-09.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="SacomBank" bankid="16" src="https://bookbuy.vn/Images/onepay/Bank-Icons-09.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="NamA Bank" bankid="17" src="/Images/onepay/Bank-Icons-19.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="NamA Bank" bankid="17" src="https://bookbuy.vn/Images/onepay/Bank-Icons-19.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Ocean Bank" bankid="18" src="/Images/onepay/Bank-Icons-10.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Ocean Bank" bankid="18" src="https://bookbuy.vn/Images/onepay/Bank-Icons-10.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="BIDV" bankid="19" src="/Images/onepay/Bank-Icons-18.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="BIDV" bankid="19" src="https://bookbuy.vn/Images/onepay/Bank-Icons-18.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Sea Bank" bankid="20" src="/Images/onepay/Bank-Icons-06.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Sea Bank" bankid="20" src="https://bookbuy.vn/Images/onepay/Bank-Icons-06.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="BacA Bank" bankid="22" src="/Images/onepay/Bank-Icons-17.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="BacA Bank" bankid="22" src="https://bookbuy.vn/Images/onepay/Bank-Icons-17.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Navibank" bankid="23" src="/Images/onepay/Bank-Icons-21.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Navibank" bankid="23" src="https://bookbuy.vn/Images/onepay/Bank-Icons-21.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Agribank" bankid="24" src="/Images/onepay/Bank-Icons-23.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Agribank" bankid="24" src="https://bookbuy.vn/Images/onepay/Bank-Icons-23.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Saigonbank" bankid="25" src="/Images/onepay/Bank-Icons-12.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Saigonbank" bankid="25" src="https://bookbuy.vn/Images/onepay/Bank-Icons-12.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
 
                                             <li>
-                                                <img alt="GPBank" bankid="34" src="/Images/onepay/GPBank.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="GPBank" bankid="34" src="https://bookbuy.vn/Images/onepay/GPBank.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="ACB" bankid="33" src="/Images/onepay/ACB.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="ACB" bankid="33" src="https://bookbuy.vn/Images/onepay/ACB.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="BaoVietBank" bankid="37" src="/Images/onepay/BaoVietBank.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="BaoVietBank" bankid="37" src="https://bookbuy.vn/Images/onepay/BaoVietBank.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="INDOVINA" bankid="43" src="/Images/onepay/INDOVINA-NAPAS.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="INDOVINA" bankid="43" src="https://bookbuy.vn/Images/onepay/INDOVINA-NAPAS.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="KienLongBank" bankid="38" src="/Images/onepay/KienLongBank.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="KienLongBank" bankid="38" src="https://bookbuy.vn/Images/onepay/KienLongBank.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="LienVietPostBank" bankid="36" src="/Images/onepay/LienVietPostBank.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="LienVietPostBank" bankid="36" src="https://bookbuy.vn/Images/onepay/LienVietPostBank.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="PGBank" bankid="42" src="/Images/onepay/PGBank.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="PGBank" bankid="42" src="https://bookbuy.vn/Images/onepay/PGBank.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="PUBLICBANK" bankid="40" src="/Images/onepay/PUBLICBANK-NAPAS.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="PUBLICBANK" bankid="40" src="https://bookbuy.vn/Images/onepay/PUBLICBANK-NAPAS.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Saigonbank" bankid="41" src="/Images/onepay/Saigonbank.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Saigonbank" bankid="41" src="https://bookbuy.vn/Images/onepay/Saigonbank.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="SHINHAN" bankid="46" src="/Images/onepay/SHINHAN-NAPAS.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="SHINHAN" bankid="46" src="https://bookbuy.vn/Images/onepay/SHINHAN-NAPAS.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="UOB" bankid="45" src="/Images/onepay/UOB.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="UOB" bankid="45" src="https://bookbuy.vn/Images/onepay/UOB.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="VietnamRussiaBank" bankid="39" src="/Images/onepay/VietnamRussiaBank.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="VietnamRussiaBank" bankid="39" src="https://bookbuy.vn/Images/onepay/VietnamRussiaBank.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
                                             <li>
-                                                <img alt="Wooribank" bankid="44" src="/Images/onepay/Wooribank.jpg?w=65&amp;h=36&amp;mode=crop">
+                                                <img alt="Wooribank" bankid="44" src="https://bookbuy.vn/Images/onepay/Wooribank.jpg?w=65&amp;h=36&amp;mode=crop">
                                             </li>
 
                                         </ul>
 
                                     </div>
-                                    <div class="popup-item ng-hide" id="pop-item2" ng-show="invoice.PaymentTypeID==2" aria-hidden="true">
+                                    <div class="popup-item" id="pop-item2" ng-show="invoice.PaymentTypeID==2" aria-hidden="false" style="">
                                         <div class="l">
                                             <p>
-                                                Thanh toán bằng thẻ ATM do các ngân hàng phát hành <b style="color: #0093ff;">được <span ng-show="(invoice.ShippingTypeID==1 || invoice.ShippingTypeID==2)" aria-hidden="true" class="ng-hide">giảm thêm 2% giá trị đơn hàng <span ng-show="supInfo.DiscountCode.toUpperCase()=='LOCTET'" aria-hidden="true" class="ng-hide">(Giá giảm đã bao gồm mã ưu đãi)</span> +</span> ưu tiên xử lý trước</b>  (miễn phí phí thanh toán qua thẻ). Sau khi nhận được tiền chuyển khoản, EBook sẽ gửi hàng đến Quý khách.
+                                                Thanh toán bằng thẻ ATM do các ngân hàng phát hành <b style="color: #0093ff;">được <span ng-show="(invoice.ShippingTypeID==1 || invoice.ShippingTypeID==2)" aria-hidden="true" class="ng-hide">giảm thêm 2% giá trị đơn hàng <span ng-show="supInfo.DiscountCode.toUpperCase()=='LOCTET'" aria-hidden="true" class="ng-hide">(Giá giảm đã bao gồm mã ưu đãi)</span> +</span> ưu tiên xử lý trước</b>  (miễn phí phí thanh toán qua thẻ). Sau khi nhận được tiền chuyển khoản, BookBuy sẽ gửi hàng đến Quý khách.
                                                 <br>
                                                 <b>Lưu ý:</b> <b style="color: #0093ff;">Thẻ ATM hoặc tài khoản của bạn phải đăng ký dịch vụ Internet Banking với ngân hàng </b> mới sử dụng được hình thức thanh toán này
 
@@ -303,43 +218,25 @@
 
 
                                     <div class="radio">
-                                        <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                            <md-radio-button class="md-warn" name="rdoPayment" value="0" id="radio_7" role="radio" aria-checked="false" aria-label="Ví điện tử"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Ví điện tử </span></div></md-radio-button>
-                                        </md-radio-group>
-
+                                        <input type="radio" name="thanhtoan" value="0" ng-model="invoice.PaymentTypeID" checked="checked"> Ví điện tử <br>
                                     </div>
-                                    <div class="online-payment ng-hide" ng-show="isOnlinePayment" aria-hidden="true">
+                                    <div class="online-payment ng-hide" ng-show="invoice.PaymentTypeID==0" aria-hidden="true">
                                         <div class="radio">
-                                            <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                                <md-radio-button class="md-warn" name="rdoPayment" value="5" id="radio_8" role="radio" aria-checked="false" aria-label="Paypal"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Paypal </span></div></md-radio-button>
-                                            </md-radio-group>
-
+                                            <input type="radio" name="thanhtoan1"  checked="checked"> Paypal <br>
                                         </div>
 
                                         <div class="radio">
-                                            <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                                <md-radio-button class="md-warn" name="rdoPayment" value="6" id="radio_9" role="radio" aria-checked="false" aria-label="Ngân lượng"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Ngân lượng </span></div></md-radio-button>
-                                            </md-radio-group>
+                                            <input type="radio" name="thanhtoan1"  checked="checked"> Ngân lượng <br>
 
                                         </div>
                                         <div class="radio">
-                                            <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                                <md-radio-button class="md-warn" name="rdoPayment" value="3" id="radio_10" role="radio" aria-checked="false" aria-label="Bảo kim"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Bảo kim </span></div></md-radio-button>
-                                            </md-radio-group>
-
+                                            <input type="radio" name="thanhtoan1"  checked="checked"> Bảo kim <br>
                                         </div>
-                                        <div class="radio">
-                                            <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                                <md-radio-button class="md-warn" name="rdoPayment" value="12" id="radio_11" role="radio" aria-checked="false" aria-label="WebMoney"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> WebMoney </span></div></md-radio-button>
-                                            </md-radio-group>
-
-                                        </div>
-
                                     </div>
-                                    <div class="popup-item ng-hide" id="pop-onlinepayment" ng-show="isOnlinePayment" aria-hidden="true">
+                                    <div class="popup-item ng-hide" id="pop-onlinepayment" ng-show="invoice.PaymentTypeID==0" aria-hidden="true">
                                         <div class="l">
                                             <p>
-                                                Bạn có thể chọn một trong các cổng thanh toán trực tuyến Paypal, Ngân Lượng hay Bảo Kim để thực hiện thanh toán. Đặc biệt: <b style="color: #0093ff"> <span ng-show="(invoice.ShippingTypeID==1 || invoice.ShippingTypeID==2)" aria-hidden="true" class="ng-hide">Giảm thêm 2% giá trị đơn hàng <span ng-show="supInfo.DiscountCode.toUpperCase()=='LOCTET'" aria-hidden="true" class="ng-hide">(Giá giảm đã bao gồm mã ưu đãi)</span> +</span> Được ưu tiên xử lý trước</b>. Sau khi EBook nhận được thông báo đã chuyển tiền sẽ gửi hàng đến Quý khách.
+                                                Bạn có thể chọn một trong các cổng thanh toán trực tuyến Paypal, Ngân Lượng hay Bảo Kim để thực hiện thanh toán. Đặc biệt: <b style="color: #0093ff"> <span ng-show="(invoice.ShippingTypeID==1 || invoice.ShippingTypeID==2)" aria-hidden="true" class="ng-hide">Giảm thêm 2% giá trị đơn hàng <span ng-show="supInfo.DiscountCode.toUpperCase()=='LOCTET'" aria-hidden="true" class="ng-hide">(Giá giảm đã bao gồm mã ưu đãi)</span> +</span> Được ưu tiên xử lý trước</b>. Sau khi Bookbuy nhận được thông báo đã chuyển tiền sẽ gửi hàng đến Quý khách.
                                                 <br>
                                                 <b>Lưu ý:</b> <b style="color: #0093ff">Bạn cần đăng nhập cổng thanh toán và có số dư trong tài khoản ≥ giá trị đơn hàng.</b>
 
@@ -352,15 +249,12 @@
                                         </div>
                                     </div>
                                     <div class="radio">
-                                        <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                            <md-radio-button class="md-warn" name="rdoPayment" value="13" id="radio_12" role="radio" aria-checked="false" aria-label="Thẻ quốc tế / Thẻ nội địa ACB, VPBank (Moca) (miễn phí thanh toán)"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Thẻ quốc tế / Thẻ nội địa ACB, VPBank (Moca) (miễn phí thanh toán) </span></div></md-radio-button>
-                                        </md-radio-group>
-
+                                        <input type="radio" name="thanhtoan" ng-model="invoice.PaymentTypeID" value="13" checked="checked">Thẻ quốc tế / Thẻ nội địa ACB, VPBank (Moca) (miễn phí thanh toán) <br>
                                     </div>
                                     <div class="popup-item ng-hide" id="pop-visapayment" ng-show="invoice.PaymentTypeID==13" aria-hidden="true">
                                         <div class="l">
                                             <p>
-                                                Sau khi đặt mua thành công, bạn sẽ được chuyển qua trang thanh toán Moca. Được<b style="color: #0093ff"> <span ng-show="(invoice.ShippingTypeID==1 || invoice.ShippingTypeID==2)" aria-hidden="true" class="ng-hide">giảm thêm 2% giá trị đơn hàng <span ng-show="supInfo.DiscountCode.toUpperCase()=='LOCTET'" aria-hidden="true" class="ng-hide">(Giá giảm đã bao gồm mã ưu đãi)</span> +</span> ưu tiên xử lý trước</b> (miễn phí thanh toán qua thẻ). Sau khi EBook nhận được thông báo đã chuyển tiền sẽ gửi hàng đến Quý khách.
+                                                Sau khi đặt mua thành công, bạn sẽ được chuyển qua trang thanh toán Moca. Được<b style="color: #0093ff"> <span ng-show="(invoice.ShippingTypeID==1 || invoice.ShippingTypeID==2)" aria-hidden="true" class="ng-hide">giảm thêm 2% giá trị đơn hàng <span ng-show="supInfo.DiscountCode.toUpperCase()=='LOCTET'" aria-hidden="true" class="ng-hide">(Giá giảm đã bao gồm mã ưu đãi)</span> +</span> ưu tiên xử lý trước</b> (miễn phí thanh toán qua thẻ). Sau khi Bookbuy nhận được thông báo đã chuyển tiền sẽ gửi hàng đến Quý khách.
                                                 <br>
                                                 <b>Lưu ý:</b> <b style="color: #0093ff">Khả dụng với các thẻ quốc tế do các ngân hàng có chi nhánh tại Việt Nam phát hành và Số dư trong tài khoản ≥ giá trị đơn hàng.</b>
                                             </p>
@@ -372,14 +266,13 @@
                                         </div>
                                     </div>
                                     <div class="radio" ng-show="!blockpaylate" aria-hidden="false">
-                                        <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                            <md-radio-button class="md-warn" name="rdoPayment" value="11" id="radio_13" role="radio" aria-checked="false" aria-label="Chuyển khoản ngân hàng"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Chuyển khoản ngân hàng </span></div></md-radio-button>
+                                        <input type="radio" name="thanhtoan" ng-model="invoice.PaymentTypeID" value="11" checked="checked"> Chuyển khoản ngân hàng<br>
                                         </md-radio-group>
 
                                         <div class="popup-item ng-hide" id="pop-item11" ng-show="invoice.PaymentTypeID==11" aria-hidden="true">
                                             <div class="l">
                                                 <p>
-                                                    Sau khi đặt hàng thành công, bạn đến ngân hàng thực hiện chuyển khoản đến một trong các tài khoản sau của EBook: Xem chi tiết <a href="//EBook.vn/Help/Index/#payment-bank" target="_blank">tại đây</a>. Vui lòng gửi hình ảnh hóa đơn, chứng từ chuyển khoản đến info@EBook.vn để được xử lý nhanh. EBook sẽ gửi hàng đến Quý khách khi nhận được thông báo chuyển tiền.
+                                                    Sau khi đặt hàng thành công, bạn đến ngân hàng thực hiện chuyển khoản đến một trong các tài khoản sau của Bookbuy: Xem chi tiết <a href="//bookbuy.vn/Help/Index/#payment-bank" target="_blank">tại đây</a>. Vui lòng gửi hình ảnh hóa đơn, chứng từ chuyển khoản đến info@bookbuy.vn để được xử lý nhanh. Bookbuy sẽ gửi hàng đến Quý khách khi nhận được thông báo chuyển tiền.
                                                     <br>
                                                     <b>Đặc biệt:</b> <b style="color: #0093ff;"><span ng-show="(invoice.ShippingTypeID==1 || invoice.ShippingTypeID==2)" aria-hidden="true" class="ng-hide">Giảm thêm 2% giá trị đơn hàng <span ng-show="supInfo.DiscountCode.toUpperCase()=='LOCTET'" aria-hidden="true" class="ng-hide">(Giá giảm đã bao gồm mã ưu đãi)</span> +</span> Được ưu tiên xử lý trước</b>.
 
@@ -392,25 +285,22 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="radio" ng-show="(editUserAdress.Address.Country.ID==1 ) &amp;&amp; !((invoice.ShippingTypeID==1 || invoice.ShippingTypeID==2) &amp;&amp; (cartDetail.TotalObj.Total>1000000 || HasHuion.length>0)) &amp;&amp; !blockpaylate" aria-hidden="false">
-                                        <md-radio-group ng-model="invoice.PaymentTypeID" class="ng-pristine ng-untouched ng-valid ng-empty" role="radiogroup" tabindex="0" aria-invalid="false">
-                                            <md-radio-button class="md-warn" name="rdoPayment" value="1" id="radio_14" role="radio" aria-checked="false" aria-label="Thanh toán tiền mặt khi nhận hàng  (COD)"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-binding ng-scope"> Thanh toán tiền mặt khi nhận hàng  (COD) </span></div></md-radio-button>
-                                        </md-radio-group>
-
-                                        <div class="aler-payment ng-hide" ng-show="!isShipHome &amp;&amp; !(invoice.ShippingTypeID==0) &amp;&amp; invoice.PaymentTypeID==1" aria-hidden="true">
+                                    <div class="radio" ng-show="(Country.ID==1 ) &amp;&amp; !((invoice.ShippingTypeID==1) || invoice.ShippingTypeID==2)" aria-hidden="false">
+                                       <input type="radio" name="thanhtoan" ng-model="invoice.PaymentTypeID" value="1" checked="checked">Thanh toán tiền mặt khi nhận hàng  (COD) <br>
+                                        <div class="aler-payment ng-hide" ng-show="!isShipHome &amp;&amp; !(invoice.ShippingTypeID==0) &amp;&amp; invoice.PaymentTypeID==1" aria-hidden="true" style="">
                                             <span>
                                                 <i class="fa fa-exclamation-triangle"></i>
                                                 Đơn hàng được phép hủy trong vòng 12h. Hotline 0933 109 009
                                             </span>
                                         </div>
-                                        <div class="popup-item ng-hide" id="pop-item1" ng-show="invoice.PaymentTypeID==1" aria-hidden="true">
+                                        <div class="popup-item ng-hide" id="pop-item1" ng-show="invoice.PaymentTypeID==1" aria-hidden="true" style="">
                                             <div class="l">
                                                 <p ng-show="(!isShipHome &amp;&amp; !(invoice.ShippingTypeID==0))" aria-hidden="false" class="">
-                                                    Nhân viên bưu điện địa phương sẽ giao hàng đến bạn tại địa chỉ nhận hàng. Bạn vui lòng nghe máy khi có số điện thoại gọi đến. Trong trường hợp bạn đi vắng, xin ủy thác cho người khác nhận hàng và thanh toán tiền thay. Bưu điện sẽ trả hàng về EBook nếu cố gắng giao hàng trong 2 lần nhưng không thành công.
-                                                    Phí bưu điện thu hộ (COD): 9.000đ,<b style="color: #0093ff"> mức phí đã được EBook hỗ trợ từ 30 – 50%</b>.
+                                                    Nhân viên bưu điện địa phương sẽ giao hàng đến bạn tại địa chỉ nhận hàng. Bạn vui lòng nghe máy khi có số điện thoại gọi đến. Trong trường hợp bạn đi vắng, xin ủy thác cho người khác nhận hàng và thanh toán tiền thay. Bưu điện sẽ trả hàng về Bookbuy nếu cố gắng giao hàng trong 2 lần nhưng không thành công.
+                                                    Phí bưu điện thu hộ (COD): 9.000đ,<b style="color: #0093ff"> mức phí đã được Bookbuy hỗ trợ từ 30 – 50%</b>.
                                                 </p>
                                                 <p ng-hide="(!isShipHome &amp;&amp; !(invoice.ShippingTypeID==0))" aria-hidden="true" class="ng-hide">
-                                                    Nhân viên giao hàng của EBook hoặc Dịch vụ chuyển phát sẽ thu tiền mặt khi giao hàng cho bạn. Trong trường hợp bạn không thể trực tiếp nhận hàng, vui lòng thông báo số tiền thanh toán cho người nhận giúp.
+                                                    Nhân viên giao hàng của Bookbuy hoặc Dịch vụ chuyển phát sẽ thu tiền mặt khi giao hàng cho bạn. Trong trường hợp bạn không thể trực tiếp nhận hàng, vui lòng thông báo số tiền thanh toán cho người nhận giúp.
 
                                                 </p>
                                             </div>
@@ -426,309 +316,7 @@
 
                         </div>
 
-
-                        <div class="other-info  box-content">
-                            <div class="title ">
-                                <h2>Thông tin khác</h2>
-                            </div>
-                            <div class="content-box">
-                                <div class="gift-box" ng-hide="paymode=='tragop'" aria-hidden="false">
-                                    <div class="box-inline">
-                                        <div class="checkbox">
-                                            <md-checkbox class="md-warn ng-pristine ng-untouched ng-valid ng-empty" aria-label="Gói thành quà" ng-model="invoice.IsWrap" role="checkbox" tabindex="0" aria-checked="false" aria-invalid="false"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-icon"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Gói thành quà </span></div></md-checkbox>
-
-                                        </div>
-                                        <div class="gift-hint">
-                                            <span>(<i class="fa fa-gift"></i> Phí gói quà 20.000đ )</span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="greeting ng-hide" ng-show="invoice.IsWrap" aria-hidden="true">
-                                        <textarea ng-model="invoice.Message" placeholder="Lời chúc" class="ng-pristine ng-untouched ng-valid ng-empty" aria-multiline="true" aria-invalid="false"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="plastic-box" ng-show="isCartContainBook" ng-hide="paymode=='tragop'" aria-hidden="false">
-                                    <div class="note-plastic">
-                                        <span>
-                                            <i class="fa fa-exclamation-triangle"></i>
-                                            EBook tự động chọn ra các đầu sách phù hợp để bọc plastic. Xem thêm dịch vụ bọc plastic <a href="/cau-hoi-thuong-gap.html#plasticinfo" target="_blank">tại đây</a>
-                                        </span>
-                                    </div>
-
-                                    <div class="alert alert-danger alert-dismissible ng-hide" role="alert" ng-show="plasticWrapError &amp;&amp; plasticValidating" aria-hidden="true">
-                                        <button type="button" class="close" ng-click="plasticValidating=false"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                        Số lượng bọc plastic lớn hơn số lượng sách.
-                                    </div>
-                                    <div class="box-inline">
-                                        <div class="checkbox" ng-class="{'disabled' : invoice.IsShippingToday} ">
-                                            <md-checkbox class="md-warn ng-pristine ng-untouched ng-valid ng-empty" aria-label="Bọc plastic" ng-model="invoice.IsWrapPlastic" ng-show="!invoice.IsShippingToday" role="checkbox" tabindex="0" aria-hidden="false" aria-checked="false" aria-invalid="false"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-icon"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope">Bọc plastic</span></div></md-checkbox>
-
-                                        </div>
-                                        <div class="plastic-hint">
-                                            <span>
-                                                ( <i class="fa fa-book"></i> Phí bọc sách 3.000đ/quyển)
-                                            </span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="plastic-content ng-hide" ng-show="invoice.IsWrapPlastic" aria-hidden="true">
-                                        <!-- ngRepeat: item in cartDetail.ShoppingCartDetails --><div class="plastic-item ng-scope" ng-repeat="item in cartDetail.ShoppingCartDetails" ng-show="(item.ProductTypeID==1 || item.ProductTypeID==759) &amp;&amp; item.CanWrapPlastic" aria-hidden="false" style="">
-                                            <div class="checkbox">
-                                                <md-checkbox class="md-warn ng-pristine ng-untouched ng-valid ng-empty" aria-label="Shout! The Beatles- Hơi Thở Thời Đại Của Thế..." ng-model="item.IsChecked" role="checkbox" tabindex="0" aria-checked="false" aria-invalid="false"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-icon"></div></div><div ng-transclude="" class="md-label"><span class="ng-binding ng-scope">   Shout! The Beatles- Hơi Thở Thời Đại Của Thế...</span></div></md-checkbox>
-
-                                            </div>
-                                            <div class="quantity">
-                                                <input type="text" ng-model="item.IsWrapPlastic" class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false">
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div><!-- end ngRepeat: item in cartDetail.ShoppingCartDetails -->
-
-                                    </div>
-                                </div>
-                                <div class="takenote-box">
-                                    <div class="checkbox">
-                                        Ghi chú cho EBook
-                                    </div>
-                                    <div class="takenote">
-                                        <textarea ng-model="invoice.RequestInfo" placeholder="Thông tin ghi chú" class="ng-pristine ng-untouched ng-valid ng-empty" aria-multiline="true" aria-invalid="false"></textarea>
-                                    </div>
-                                </div>
-                                <div class="vat-box ng-hide" ng-show="IsReqireVAT" aria-hidden="true">
-                                    <div class="box-inline">
-                                        <div class="checkbox">
-                                            <md-checkbox class="md-warn ng-pristine ng-untouched ng-valid ng-empty" aria-label="Xuất hóa đơn VAT" ng-model="invoice.IsVAT" role="checkbox" tabindex="0" aria-checked="false" aria-invalid="false"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-icon"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Xuất hóa đơn VAT </span></div></md-checkbox>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="greeting ng-hide" ng-show="invoice.IsVAT" aria-hidden="true">
-                                        <div class="validation-box" ng-class="{'box-invalid': submitDocheckout &amp;&amp; form3.txtCompanyName.$invalid}">
-                                            <md-input-container class="md-block">
-                                                <label for="txtCompanyName">Tên công ty</label>
-                                                <input required="" id="txtCompanyName" name="txtCompanyName" ng-model="VATAddress.CompanyName" class="ng-pristine ng-untouched md-input ng-empty ng-invalid ng-invalid-required" aria-required="true" aria-invalid="true"><div class="md-errors-spacer"></div>
-                                                <div class="error-text md-input-message-animation ng-hide" ng-show="submitDocheckout &amp;&amp; form3.txtCompanyName.$invalid" ng-message="required" aria-hidden="true">
-                                                    Vui lòng nhập tên công ty
-                                                </div>
-                                            </md-input-container>
-                                        </div>
-                                        <div class="validation-box" ng-class="{'box-invalid': submitDocheckout &amp;&amp;  form3.txtTaxNumber.$invalid}">
-                                            <md-input-container class="md-block">
-                                                <label for="txtTaxNumber">Mã số thuế</label>
-                                                <input required="" id="txtTaxNumber" name="txtTaxNumber" ng-model="VATAddress.TaxNumber" class="ng-pristine ng-untouched md-input ng-empty ng-invalid ng-invalid-required" aria-required="true" aria-invalid="true"><div class="md-errors-spacer"></div>
-                                                <div class="error-text md-input-message-animation ng-hide" ng-show="submitDocheckout &amp;&amp; form3.txtTaxNumber.$invalid" ng-message="required" aria-hidden="true">
-                                                    Vui lòng nhập mã số thuế
-                                                </div>
-                                            </md-input-container>
-                                        </div>
-                                        <div class="validation-box" ng-class="{'box-invalid':submitDocheckout &amp;&amp;  form3.txtVATAddress.$invalid}">
-                                            <md-input-container class="md-block">
-                                                <label for="txtVATAddress">Địa chỉ</label>
-                                                <input required="" id="txtVATAddress" name="txtVATAddress" ng-model="VATAddress.Address" class="ng-pristine ng-untouched md-input ng-empty ng-invalid ng-invalid-required" aria-required="true" aria-invalid="true"><div class="md-errors-spacer"></div>
-                                                <div class="error-text md-input-message-animation ng-hide" ng-show="submitDocheckout &amp;&amp; form3.txtVATAddress.$invalid" ng-message="required" aria-hidden="true">
-                                                    Vui lòng nhập địa chỉ
-                                                </div>
-                                            </md-input-container>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-                        </div>
-
-                        <div class="promo-info box-content">
-                            <div class="content-box">
-                                <div class="bbxu-box ng-hide" ng-show="userid!=-1" aria-hidden="true">
-                                    <div class="box-inline coin-total">
-                                        <div class="checkbox ng-hide" ng-show="ammountCoin>=150" aria-hidden="true">
-                                            <md-checkbox class="md-warn" aria-label="Đổi hết" ng-disabled="(invoice.DiscountByCode > 0 &amp;&amp; invoice.DiscountByCoin == 0)||coinsCanUse==0" role="checkbox" aria-disabled="true" tabindex="-1" disabled="disabled"><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-icon"></div></div><div ng-transclude="" class="md-label"><span class="ng-scope"> Sử dụng </span><span class="color-bb ng-binding ng-scope">0</span><span class="ng-scope"> BBXu</span></div></md-checkbox>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="discount-pro">
-                                    <div class="slider-box">
-                                        <div class="not-loged" ng-show="userid==-1" aria-hidden="false">
-                                            <span>
-                                                Bạn cần <a href="/dang-nhap.html?returnUrl=https://EBook.vn/thanh-toan.html">đăng nhập</a> để giảm giá với mã giảm giá / ưu đãi
-                                            </span>
-
-                                        </div>
-                                    </div>
-                                    <div class="discount-zone">
-
-                                        <div class="row">
-                                            <div class="col-md-7 col-sm-12 col-xs-12" style="margin-bottom: 15px;padding:0">
-                                                <div class="col-md-12 col-sm-12 col-xs-12 label-form">
-                                                    <label>Mã giảm giá / ưu đãi</label>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12 ">
-                                                    <p class="select-block" style="width: 70%;float: left; ">
-                                                        <select class="item-input input-text ng-pristine ng-untouched ng-valid ng-not-empty" id="dropEditWard" name="dropEditWard" ng-model="DiscountByCodeType" style="width:100%;border-right: 0;" aria-invalid="false">
-                                                            <option value="1">
-                                                                Mã giảm giá / ưu đãi EBook
-                                                            </option>
-                                                            <option value="2">
-                                                                Thành viên Kaspersky
-                                                            </option>
-                                                            <option value="3">
-                                                                Thành viên iBookStop
-                                                            </option>
-                                                        </select>
-                                                    </p>
-
-                                                    <input placeholder="Nhập mã giảm giá" class="input-text ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="width:30%;" type="text" required="" id="txtCode" name="txtCode" ng-model="login.Code" aria-required="true" aria-invalid="true">
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-7 col-sm-12 col-xs-12" style="padding:0">
-                                                <div class="col-md-12 col-sm-12 col-xs-12 " style="text-align: right;">
-                                                    <div ng-show="isCodeSubmited" ng-messages="error.CodeType" aria-live="assertive" aria-hidden="true" class="ng-hide">
-                                                        <div ng-message="required" style="color: red;" class="ng-binding"></div>
-                                                    </div>
-                                                    <div ng-show="isCodeSubmited &amp;&amp; form2.txtCode.$invalid" ng-messages="error.Code" aria-live="assertive" aria-hidden="true" class="ng-hide">
-                                                        <div ng-message="required" style="color: red;" class="ng-binding"></div>
-                                                    </div>
-                                                    <div ng-show="DiscountByCodeNote!=null &amp;&amp; DiscountByCodeNote!=''" style="color: #FF5722; font-size: 12px;" aria-hidden="false" class="responsive ng-binding ng-hide">
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-7 col-sm-12 col-xs-12" style="padding:0">
-
-                                                <button class="md-warn md-button md-ink-ripple" type="button" ng-transclude="" ng-click="applyCode()" ng-disabled="invoice.DiscountByCode == 0 &amp;&amp; invoice.DiscountByCoin > 0" style="float:right; font-weight:bold;" aria-disabled="false"><md-icon md-svg-src="/Images/frontend/base/arrow-right.svg" style="display:inline-block;" aria-hidden="true" class="ng-scope ng-isolate-scope"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></md-icon><span class="ng-scope"> Áp dụng</span></button>
-                                                <div class="clearfix"></div>
-                                                <div class="aler-valid ng-hide" ng-show="invoice.DiscountByCode == 0 &amp;&amp; invoice.DiscountByCoin > 0" aria-hidden="true">
-                                                    <span>
-                                                        <i class="fa fa-exclamation-triangle"></i>
-                                                        Mã giảm giá không áp dụng đồng thời với BBxu.
-                                                    </span>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                    </div>
-                                </div>
-
-                                <div class="divider no-mar-bottom" style="display:none;">
-                                    <hr>
-                                    <div class="or bbxu-discount">
-                                        <strong>
-                                            Giảm giá với BBXu
-                                            <span class="view-more">
-                                                <a>
-                                                    <i class="fa fa-1x fa-angle-double-down"></i>
-                                                </a>
-                                            </span>
-                                        </strong>
-                                    </div>
-                                </div>
-
-                                <div class="bbcoin-box" style="display:none">
-                                    <span class="bbcoin-icon">
-                                        <i></i>
-                                        <span>
-                                            Giảm giá với BBXu
-                                        </span>
-
-                                    </span>
-                                    <div class="slider-box">
-                                        <div class="coin-used-box ng-hide" ng-show="ammountCoin>=150" aria-hidden="true">
-                                            <div class="l">
-                                                Đổi
-                                                <span class="current-use">
-                                                    <span>0</span>
-                                                    BBXu
-                                                </span>
-                                            </div>
-                                            <div class="r">
-                                                <small>
-                                                    ( Số lượng BBXu có thể đổi : <span class="ng-binding"> 0</span> )
-                                                </small>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="cant-use ng-hide" ng-show="ammountCoin<150 &amp;&amp; userid!=-1" aria-hidden="true">
-                                            <span>
-                                                <i class="fa fa-warning"></i>
-                                                Bạn chỉ đổi được khi BBXu &gt; 150.
-                                            </span>
-
-                                        </div>
-                                        <div class="not-loged" ng-show="userid==-1" aria-hidden="false">
-                                            <span>
-                                                <i class="fa fa-warning"></i>
-                                                Bạn cần đăng nhập để giảm giá với BBXu
-                                            </span>
-
-                                        </div>
-                                        <div class="slider noUi-target noUi-ltr noUi-horizontal noUi-connect" ng-disabled="supInfo.DiscountCode != null &amp;&amp; invoice.DiscountByCoin == 0" aria-disabled="false" disabled="disabled"><div class="noUi-base"><div class="noUi-origin noUi-background noUi-stacking" style="left: 100%;"><div class="noUi-handle noUi-handle-lower"></div></div></div></div>
-                                        <div class="coin-total ng-hide" ng-show="userid!=-1" aria-hidden="true">
-                                            <div class="aler-valid ng-hide" ng-show="supInfo.DiscountCode != null &amp;&amp; invoice.DiscountByCoin == 0" aria-hidden="true">
-                                                <span>
-                                                    <i class="fa fa-exclamation-triangle"></i>
-                                                    BBxu không áp dụng đồng thời với mã giảm giá.
-                                                </span>
-                                            </div>
-                                            <div class="total">
-                                                Bạn có <span class="ng-binding"> 0 BBXu</span>
-                                            </div>
-
-                                            
-                                            <div class="clearfix"></div>
-                                        </div>
-
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-
-
-
-
-
-                            </div>
-                        </div>
-                        <div class="payment-type box-content ng-hide" ng-show="paymode=='tragop'" aria-hidden="true">
-                            <div class="title"><h2>Trả góp qua Alepay</h2></div>
-                            <div class="content-box tragop-container">
-                                <div class="mthd-item " id="method_tragop" data-method="6">
-                                    <div class="tragop-body">
-                                        <h4>Chọn Ngân hàng trả góp</h4>
-                                        <br>
-                                        <ul class=" bank-logo tragop-bank">
-                                            <!-- ngRepeat: bank in banks -->
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                        <div class="card-type ng-hide" ng-show="bankselected &amp;&amp; bankselected.paymentMethods" aria-hidden="true">
-                                            <h4>Chọn loại thẻ</h4>
-                                            <br>
-                                            <ul class=" bank-logo tragop-bank">
-                                                <!-- ngRepeat: card in bankselected.paymentMethods -->
-                                            </ul>
-                                        </div>
-                                        <div class="removeSpacing col-xs-12 col-sm-12 col-md-12 ng-hide" style="top: 3px;" ng-show="cardselected" aria-hidden="true">
-                                            <br>
-                                            <p for="checkagreefinstragop" style="width: 95%; bottom: 0;  padding-left: 5px;" class="customizedCheckboxLabel">* Quý khách sẽ không được thay đổi hoặc huỷ đơn hàng vì bất kỳ lý do gì sau khi đơn hàng đã chuyển sang trả góp.</p>
-
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <!-- ngIf: cardselected -->
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button ng-click="doCheckout()" class="btn btn-bb btn-pad1020 do-checkout-desktop" style="padding: 10px 30px;" id="docheckout" ng-show="steppayment &amp;&amp; paymode!='tragop'" aria-hidden="false">Đặt mua  <!-- ngIf: loading --></button>
+                        <button ng-click="doCheckout()" class="btn btn-bb btn-pad1020 do-checkout-desktop" style="padding: 10px 30px;" id="docheckout" aria-hidden="false">Đặt mua  <!-- ngIf: loading --></button>
 
 
 
@@ -738,26 +326,26 @@
                         <div class="item-block-right">
                             <div class="box-r-block">
                                 <p class="box-title">Giao hàng đến</p>
-                                <p class="deliver-name ng-binding">ok</p>
+                                <p class="deliver-name ng-binding">{{hoten}}</p>
                                 <p class="deliver-address ng-binding">
-                                    ô 12 lô 555 đăng thai mai, Châu Đốc, An Giang, Việt Nam
+                                   {{sonha}} - {{quan}} - {{tinh}} - {{quocgia}}
                                 </p>
                                 <p class="deliver-phone ng-binding">
-                                    0125 318 4100 - phamthanhhaivy@gmail.com
+                                    {{didong}} - {{mailnhan}}
                                 </p>
                                 <p class="action">
-                                    <button class="btn btn-none-bg  btn-pad37" ng-click="useUserAddress(-1, false)">Sửa</button>
+                                    <a class="btn btn-none-bg  btn-pad37" href="#/dathang">Sửa</a>
                                 </p>
                             </div>
                         </div>
                         <div class="item-block-right">
                             <div class="box-r-block">
-                                <p class="box-title ng-binding">Đơn hàng (1 sản phẩm) </p>
-                                <!-- ngRepeat: item in cartDetail.ShoppingCartDetails  | limitTo:limitItemCart --><div class="break-down-cart ng-scope" ng-repeat="item in cartDetail.ShoppingCartDetails  | limitTo:limitItemCart" style="">
-                                    <p class="l"><strong class="ng-binding">1 x </strong><a ng-href="/sach/-shout-the-beatles-hoi-tho-thoi-dai-cua-the-ky-20--p114117.html" target="_blank" class="ng-binding" href="/sach/-shout-the-beatles-hoi-tho-thoi-dai-cua-the-ky-20--p114117.html"> Shout! The Beatles- Hơi Thở Thời Đại Của Thế Kỷ 20 </a></p>
-                                    <p class="r ng-binding">254,000₫</p>
+                                <p class="box-title">Đơn hàng ({{obj.totalBooks}} sản phẩm) </p>
+                               <div class="break-down-cart" ng-repeat="item in obj.orderBooks" style="">
+                                    <p class="l"><strong class="ng-binding">{{item.count}} x </strong><a ng-href="#/sach/{{item.LoaiSach}}/{{item.id}}" target="_blank" href="#/sach/{{item.LoaiSach}}/{{item.id}}">{{item.TenSach}}</a></p>
+                                    <p class="r ng-binding">{{item.totalgiasach}}đ</p>
                                     <div class="clearfix"></div>
-                                </div><!-- end ngRepeat: item in cartDetail.ShoppingCartDetails  | limitTo:limitItemCart -->
+                                </div>
 
                                 <div class="fee-items">
                                     <div class="total">
@@ -765,7 +353,7 @@
                                             Tiền hàng
                                         </div>
                                         <div class="r ng-binding">
-                                            254,000₫
+                                            {{obj.totalAmount}}đ
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -778,168 +366,37 @@
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
-                                    <div class="wrap-fee ng-hide" ng-show="invoice.WrapFee>0" aria-hidden="true">
-                                        <div class="l">
-                                            Phí gói quà
-                                        </div>
-                                        <div class="r ng-binding">
-                                            ₫
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="inday-fee ng-hide" ng-show="invoice.ShippingTodayFee>0" aria-hidden="true">
-                                        <div class="l">
-                                            Phí giao hàng trong ngày
-                                        </div>
-                                        <div class="r ng-binding">
-                                            ₫
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="pastic-fee ng-hide" ng-show="invoice.WrapPlasticFee>0" aria-hidden="true">
-                                        <div class="l">
-                                            Phí bọc plastic
-                                        </div>
-                                        <div class="r ng-binding">
-                                            ₫
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="ship-fee ng-hide" ng-show="invoice.CODFee>0" aria-hidden="true">
-                                        <div class="l">
-                                            Phí COD
-                                        </div>
-                                        <div class="r ng-binding">
-                                            ₫
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="ship-fee ng-hide" ng-show="invoice.PaymentFee>0" aria-hidden="true">
-                                        <div class="l">
-                                            Phí thanh toán
-                                        </div>
-                                        <div class="r ng-binding">
-                                            đ
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="inday-fee ng-hide" ng-show="invoice.VATFee>0" aria-hidden="true">
-                                        <div class="l">
-                                            Phụ thu VAT
-                                        </div>
-                                        <div class="r ng-binding">
-                                            ₫
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="discount-by-coin ng-hide" ng-show="invoice.DiscountByCoin>0" aria-hidden="true">
-                                        <div class="l">
-                                            Giảm giá BBXu
-                                        </div>
-                                        <div class="r">
-                                            <span class="ng-binding">
-                                                -0₫
-                                                &nbsp;
-                                                <i class="fa fa-times" ng-click="deleteDiscountByCoin()" role="button" tabindex="0"></i>
-                                            </span>
-
-                                        </div>
+                                    
                                         <div class="clearfix"></div>
                                     </div>
 
-                                    <div class="discount-by-code ng-hide" ng-show="invoice.DiscountByCode>0" aria-hidden="true">
-                                        <div class="l">
-                                            Giảm giá với mã
-                                        </div>
-                                        <div class="r">
-                                            <span class="ng-binding">
-                                                -0₫
-                                                <i class="fa fa-question-circle" tooltip="" title=""></i>
-                                                &nbsp;
-                                                <i class="fa fa-times" ng-click="deleteDiscountByCode()" role="button" tabindex="0"></i>
-                                            </span>
-
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="discount-other ng-hide" ng-show="invoice.Discount2Percent>0" aria-hidden="true">
-                                        <div class="l">
-                                            Giảm giá 2%
-                                        </div>
-                                        <div class="r">
-                                            <span class="ng-binding">
-                                                -₫
-                                            </span>
-
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="discount-other ng-hide" ng-show="cartDetail.Discount>0" aria-hidden="true">
-                                        <div class="l">
-                                            Giảm giá khác
-                                        </div>
-                                        <div class="r">
-                                            <span class="ng-binding">
-                                                -0₫
-                                            </span>
-
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
                                     <div class="total-all">
                                         <div class="l">
                                             Tổng cộng
                                         </div>
                                         <div class="r">
-                                            <span ng-show="invoice.TotalAll>=0" class="ng-binding ng-hide" aria-hidden="true">
-                                                ₫
-                                            </span>
-                                            <span ng-show="invoice.TotalAll==null" class="ng-binding" aria-hidden="false">
-                                                254,000₫
+                                            <span aria-hidden="false">
+                                                {{obj.totalAmount}}₫
                                             </span>
 
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
 
-                                    <div class="notes">
-                                        <ul>
-                                            <li ng-show="DiscountByCodeNote!=null &amp;&amp; DiscountByCodeNote!=''" class="ng-binding ng-hide" aria-hidden="true">
-                                                <i class="fa fa-angle-right"></i>
-                                                
-                                            </li>
-                                            <li ng-show="FeeNote" class="ng-binding ng-hide" aria-hidden="true">
-                                                <i class="fa fa-angle-right"></i>
-                                                
-
-                                            </li>
-
-                                            <li ng-show="invoice.WrapPlasticNote!=null &amp;&amp; invoice.WrapPlasticNote!=''" class="ng-binding ng-hide" aria-hidden="true">
-                                                <i class="fa fa-angle-right"></i>
-                                                
-                                            </li>
-                                            <li ng-show="ListBookGiftNote!=null" class="ng-binding ng-hide" aria-hidden="true">
-                                                <i class="fa fa-angle-right"></i>
-                                                
-                                            </li>
-                                            <!-- ngRepeat: item in OtherNote -->
-                                            <!-- ngRepeat: item in cartDetail.Notes -->
-                                        </ul>
-                                    </div>
-                                </div>
-                                <p class="action">
-                                    <a class="btn btn-none-bg  btn-pad37" href="/gio-hang.html">
+                                    <p class="action">
+                                    <a class="btn btn-none-bg  btn-pad37" href="#/cart">
                                         Sửa
                                     </a>
                                 </p>
+                                </div>
+                                
                             </div>
                         </div>
 
 
                     </div>
 
-                    <button ng-click="doCheckout()" class="btn btn-bb btn-pad1020 do-checkout-mobile" style="padding: 10px 30px;" id="docheckout" ng-show="steppayment &amp;&amp; paymode!='tragop'" aria-hidden="false">Đặt mua  <!-- ngIf: loading --></button>
+                    
 
                 </div>
             </form>
