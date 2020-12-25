@@ -136,6 +136,7 @@ app.controller("checkoutCtrl",function($scope,$http,orderBookService,$modal, Mod
         $scope.doCheckout=function()
         {
           window.alert("Thanh toán thành công");
+             $state.transitionTo('mainpage');
         }
 })
 app.controller("productlistCtrl",function($scope,$http,orderBookService,$modal, ModalEditor,$rootScope,SachsFactory)
