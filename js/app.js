@@ -127,7 +127,7 @@ app.controller("checkoutCtrl",function($scope,$http,orderBookService,$modal, Mod
       {
         $scope.hoten=$rootScope.hoten;
         $scope.mailnhan=$rootScope.mailnhan;
-        $scope.quocgian=$rootScope.quocgia;
+        $scope.quocgia=$rootScope.quocgia;
         $scope.tinh=$rootScope.tinh;
         $scope.quan=$rootScope.quan;
         $scope.sonha=$rootScope.sonha;
