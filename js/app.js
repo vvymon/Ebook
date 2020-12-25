@@ -116,8 +116,28 @@ $stateProvider
         url : '/gioithieu',
         templateUrl : 'MainIndex/gioithieueb.html'
               })
+.state('checkout', {
+        url : '/checkout',
+        templateUrl : 'MainIndex/checkout.html',
+        controller:'checkoutCtrl'
+              })
 }])
 
+app.controller("checkoutCtrl",function($scope,$http,orderBookService,$modal, ModalEditor,$rootScope,SachsFactory)
+      {
+        $scope.hoten=$rootScope.hoten;
+        $scope.mailnhan=$rootScope.mailnhan;
+        $scope.quocgian=$rootScope.quocgia;
+        $scope.tinh=$rootScope.tinh;
+        $scope.quan=$rootScope.quan;
+        $scope.sonha=$rootScope.sonha;
+        $scope.didong=$rootScope.didong;
+        $scope.obj=orderBookService
+        $scope.doCheckout=function()
+        {
+          window.alert("Thanh toán thành công");
+        }
+})
 app.controller("productlistCtrl",function($scope,$http,orderBookService,$modal, ModalEditor,$rootScope,SachsFactory)
       {
         $scope.sachmois1 = SachsFactory.query();
@@ -165,26 +185,33 @@ app.controller("productlistCtrl",function($scope,$http,orderBookService,$modal, 
             $scope.dataError=response2.statusText
           }
         )
-        // $rootScope.obj=orderBookService;
-        // $scope.addToCart = function(book){
-        //   $rootScope.book=book;
-        //   orderBookService.addBooks(book);   
-        //   ModalEditor.openModal();
-        //    console.log($rootScope.obj.totalAmount);
-        // };
-        // $scope.addToCart1 = function(book){
-        //   $rootScope.book=book;
-        //   orderBookService.addBooks(book);   
-        //    console.log($rootScope.obj);
-        // };
        
       }
 
      
         )
-app.controller("dathangCtrl",function($scope,orderBookService,$rootScope)
+app.controller("dathangCtrl",function($scope,orderBookService,$rootScope, $state)
       {
         $scope.statuss=$rootScope.status;
+        
+        $scope.gotoPayment=function()
+  {    
+       if($scope.FullName==null || $scope.OrderEmail==null ||$scope.Country==null|| $scope.City==null||$scope.Ward==null||$scope.Addr==null||$scope.Telephone==null)
+        {
+          console.log('Mời nhập');
+        window.alert("Mời bạn nhập đầy đủ thông tin");
+        }
+        else {
+        $rootScope.hoten=$scope.FullName;
+        $rootScope.mailnhan=$scope.OrderEmail;
+        $rootScope.quocgia=$scope.Country;
+        $rootScope.tinh=$scope.City;
+        $rootScope.quan=$scope.Ward;
+        $rootScope.sonha=$scope.Addr;
+        $rootScope.didong=$scope.Telephone;
+        $state.transitionTo('checkout');
+        }
+      }
 });
 app.controller("cartCtrl",function($scope,orderBookService,$rootScope)
       {
@@ -369,18 +396,7 @@ app.service("orderBookService",['$rootScope',function($rootScope){
 
  obj.adddetailBooks = function(newBook,quantity) {
         $rootScope.test=obj.status;
-      // if(obj.orderBooks.length===0 && quantity==1)
-      // {
-      //   obj.orderBooks.push(newBook);
-      //   obj.totalBooks += quantity;
-      //   newGia= newBook.Gia.replace(/,/g,"");
-      //   newGia1=parseFloat(newGia.replace(/đ/g,""));
-      //   obj.totalAmount += newGia1*quantity;
-      //   newBook.count=1
-      //   newBook.totalgiasach=newGia1;
-      // }
-      // else 
-      // {
+     
         var repeat=false;
       for(var i=0; i < obj.orderBooks.length;i++){
         if(obj.orderBooks[i].id ===newBook.id){
